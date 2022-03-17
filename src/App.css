@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c4d7f2;
+  height: 100vh;
+  /* position: relative;
+  top: 10vh; */
+}
+.content {
+  position: relative;
+  top: 10vh;
+}

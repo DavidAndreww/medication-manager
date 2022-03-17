@@ -1,9 +1,22 @@
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './layouts/login/Login'
+import Main from './layouts/main/Main'
+import Onboarding from './layouts/onboarding/Onboarding'
+import Navbar from './components/navbar/Navbar'
 
 
-export function App () {
+const App = () => {
   return (
-    <div>
-      my app
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/main' element={<Main />}/>
+        <Route path='/' element={<Login />} />
+        <Route path='/onboarding' element={<Onboarding />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
+
+export default App
