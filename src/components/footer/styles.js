@@ -12,7 +12,7 @@ const Styles = {
     background-color: #26384C;
     z-index: 1;
     color: #FFFFFC;
-    font-size: 9vh;
+    font-size: 5vh;
   `
 }
 
