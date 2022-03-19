@@ -8,17 +8,25 @@ import Signup from './pages/signup/Signup'
 import DataCapture from './pages/dataCapture/DataCapture'
 import Landing from './pages/landing/Landing'
 
-const currMed = {
-  name: 'Xanax',
-  dose: '12mg',
-  frequency: ['0', '4'],
-  time: ['AM'], 
-  id: 561,
-  prescriber: 'Dr. Sanchez',
-  purpose: 'Cold & Flue'
-
+//? --------------------------------
+//? testing update path form rendering
+// const currEntity = {
+//   name: 'Xanax',
+//   dose: '12mg',
+//   frequency: ['0', '4'],
+//   time: ['AM'], 
+//   id: 561,
+//   prescriber: 'Dr. Sanchez',
+//   purpose: 'Cold & Flue'
+// }
+const currEntity = {
+  firstName:'David',
+  lastName: 'Bille',
+  credentials: 'PT',
+  specialty: 'PT',
+  phone: '512-800-0033'
 }
-
+//? --------------------------------
 const App = () => {
 
 
@@ -31,7 +39,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/onboarding' element={<Onboarding />} />
         <Route path='/signup' element={<Signup />}/>
-        <Route path='/update' element={<DataCapture currMed={currMed} />} />
+        <Route path='/update' element={<DataCapture currEntity={currEntity} formType='doc' />} />
       </Routes>
     </BrowserRouter>
   )

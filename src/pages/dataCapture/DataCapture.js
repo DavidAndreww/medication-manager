@@ -1,46 +1,66 @@
 import { useState, useEffect } from 'react'
-import { MedForm } from "../../components/forms/Forms"
+import { MedForm, DoctorForm } from "../../components/forms/Forms"
 
-const DataCapture = ({ currMed }) => {
-  const [med, setMed] = useState()
+// renders medication or doctor form depending on formType argument
+const DataCapture = ({ currEntity, formType }) => {
+  const [entity, setEntity] = useState()
 
   useEffect(() => {
-    setMed(currMed)
+    setEntity(currEntity)
   },[])
 
   const handleClick = (e) => {
     e.preventDefault()
-    
-    if(e.target.id === 'close-med-form-btn') {
+    // logic flow dependent on 'save' or 'cancel' button click
+    if(e.target.id.split('-').includes('close')) {
       console.log('link back to main - no fetch required')
+      return
+    } 
+    
+    if(formType === 'med') {
+      console.log('update medicine table with: ', entity)
     } else {
-      console.log('update db with ', med)
+      console.log('update doctor table with: ', entity)
     }
   }
 
+  // text inputs
   const handleInputChange = (e) => {
-    setMed({ ...med, [e.target.id]: e.target.value })
+    setEntity({ ...entity, [e.target.name]: e.target.value })
   }
 
+  // checkbox inputs
   const handleCheckboxChange = (timeType, e) => {
-    const newArr = med[timeType]
-    console.log(newArr)
+    const newArr = entity[timeType]
     const idx = newArr.indexOf(e.target.value)
     idx >= 0 ? newArr.splice(idx,1) : newArr.push(e.target.value)
-    setMed({ ...med, [timeType]: newArr })
+    setEntity({ ...entity, [timeType]: newArr })
   } 
 
+  // renders according to formType
   return (
-    med === undefined ? (
-      <h4>Loading...</h4>
-    ) : (
+    entity === undefined ? (
+      <div className='content'>
+        <h4>Loading...</h4>
+      </div>
+    ) : formType === 'med' ? (
       <div className='content'>
         <h1>DataCapture Page</h1>
         <MedForm 
           handleClick={handleClick} 
           handleInputChange={handleInputChange} 
           handleCheckboxChange={handleCheckboxChange}
-          med={med}/>
+          med={entity}
+        />
+      </div>
+    ) : (
+      <div className='content'>
+        <h1>DataCapture Page</h1>
+        <DoctorForm 
+          handleClick={handleClick} 
+          handleInputChange={handleInputChange} 
+          doctor={entity}
+        />
       </div>
     )
   )
