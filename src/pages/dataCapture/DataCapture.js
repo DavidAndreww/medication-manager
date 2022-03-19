@@ -4,7 +4,7 @@ import { MedForm, DoctorForm } from "../../components/forms/Forms"
 // renders medication or doctor form depending on formType argument
 const DataCapture = ({ currEntity, formType }) => {
   const [entity, setEntity] = useState()
-
+  
   useEffect(() => {
     setEntity(currEntity)
   },[])

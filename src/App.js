@@ -19,12 +19,22 @@ import Landing from './pages/landing/Landing'
 //   prescriber: 'Dr. Sanchez',
 //   purpose: 'Cold & Flue'
 // }
+// const currEntity = {
+//   firstName:'David',
+//   lastName: 'Bille',
+//   credentials: 'PT',
+//   specialty: 'PT',
+//   phone: '512-800-0033'
+// }
+
 const currEntity = {
-  firstName:'David',
-  lastName: 'Bille',
-  credentials: 'PT',
-  specialty: 'PT',
-  phone: '512-800-0033'
+  name: '', 
+  dose: '',
+  frequency: [],
+  time: [],
+  id: '', 
+  prescriber: '',
+  purpose: ''
 }
 //? --------------------------------
 const App = () => {
@@ -39,7 +49,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/onboarding' element={<Onboarding />} />
         <Route path='/signup' element={<Signup />}/>
-        <Route path='/update' element={<DataCapture currEntity={currEntity} formType='doc' />} />
+        <Route path='/update' element={<DataCapture currEntity={currEntity} formType='med' />} />
       </Routes>
     </BrowserRouter>
   )
