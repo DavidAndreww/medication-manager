@@ -80,8 +80,8 @@ export const SignupForm = ({ handleSubmit, handleChange, user }) => {
       <Styles.Input type='text' name='userFirst' placeholder='First Name' onChange={(e) => handleChange(e)} /><br />
       <Styles.Input type='text' name='userLast' placeholder='Last Name' onChange={(e) => handleChange(e)} /><br />
       <Styles.Input type='text' name='email' placeholder='Email' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='password' name='password' placeholder='Username' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='password' name='passwordConfirmation' placeholder='Username' onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='password' name='password' placeholder='Password' onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='password' name='passwordConfirmation' placeholder='Confirm Password' onChange={(e) => handleChange(e)} /><br />
       <Styles.Button id='user-signup' className='form-primary-btn' isPrimary solo>Sign Up</Styles.Button>
     </Styles.Form>
   )

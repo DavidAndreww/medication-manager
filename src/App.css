@@ -5,10 +5,9 @@
 }
 
 body {
-  background-color: #c4d7f2;
+  background-color: #26384C;
   height: 100vh;
-  /* position: relative;
-  top: 10vh; */
+  color: #FFFFFC;
 }
 .content {
   position: relative;

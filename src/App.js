@@ -49,7 +49,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/onboarding' element={<Onboarding />} />
         <Route path='/signup' element={<Signup />}/>
-        <Route path='/update' element={<DataCapture currEntity={currEntity} formType='med' />} />
+        <Route path='/update' element={<DataCapture formType='med' />} />
       </Routes>
     </BrowserRouter>
   )
