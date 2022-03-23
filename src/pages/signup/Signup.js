@@ -12,17 +12,16 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await fetch("./netlify/functions/signup", {
+    const response = await fetch("/.netlify/functions/signUp", {
       method: "POST",
-      body: JSON.stringify(user)
+      body: JSON.stringify({ user })
     })
 
     const json = await response.json()
-    console.log(json)
-
+    console.log('NETLIFY:::',json)
   }
 
-  console.log(user)
+  // console.log(user)
   return (
     <div className='content'>
       <h1>Signup</h1>
