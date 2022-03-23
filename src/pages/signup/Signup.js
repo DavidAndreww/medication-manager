@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { SignupForm } from '../../components/forms/Forms'
+import { formValidation } from '../../utils/formValidation'
 
 const Signup = () => {
   const [user, setUser] = useState(
     { email: '', password: '', passwordConfirmation: '', userFirst: '', userLast: '' }
-    )
+  )
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
@@ -12,13 +13,16 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await fetch("/.netlify/functions/signUp", {
-      method: "POST",
-      body: JSON.stringify({ user })
-    })
+    if (formValidation(user.password, user.passwordConfirmation, user.email)) {
 
-    const json = await response.json()
-    console.log('NETLIFY:::',json)
+      const response = await fetch("/.netlify/functions/signUp", {
+        method: "POST",
+        body: JSON.stringify({ user })
+      })
+  
+      const json = await response.json()
+      console.log('NETLIFY:::',json)
+    }
   }
 
   // console.log(user)

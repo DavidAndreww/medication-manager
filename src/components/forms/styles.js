@@ -8,6 +8,8 @@ const Styles = {
     border-bottom: 2px solid #95a3b3;
     margin-top: 10px;
     width: 100%;
+    color: #FFFFFC;
+    font-size: 2vw;
   `,
   Button: styled.button.attrs(props => ({
     color: props.isPrimary ? '#82D173' : '#c4d7f2',

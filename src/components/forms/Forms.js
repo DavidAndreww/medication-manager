@@ -74,14 +74,16 @@ export const LoginForm = ({ handleSubmit, handleChange, user }) => {
   )
 }
 
-export const SignupForm = ({ handleSubmit, handleChange, user }) => {
+export const SignupForm = ({ handleSubmit, handleChange, user, isValidPassword }) => {
+  const {email, password, passwordConfirmation, userFirst, userLast} = user;
+  
   return (
     <Styles.Form onSubmit={(e) => handleSubmit(e)}>
-      <Styles.Input type='text' name='userFirst' placeholder='First Name' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='text' name='userLast' placeholder='Last Name' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='text' name='email' placeholder='Email' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='password' name='password' placeholder='Password' onChange={(e) => handleChange(e)} /><br />
-      <Styles.Input type='password' name='passwordConfirmation' placeholder='Confirm Password' onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='text' name='userFirst' placeholder='First Name' value={userFirst} onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='text' name='userLast' placeholder='Last Name' value={userLast} onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='text' name='email' placeholder='Email' value={email} onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='password' name='password' placeholder='Password' value={password} onChange={(e) => handleChange(e)} /><br />
+      <Styles.Input type='password' name='passwordConfirmation' placeholder='Confirm Password' value={passwordConfirmation} onChange={(e) => handleChange(e)} /><br />
       <Styles.Button id='user-signup' className='form-primary-btn' isPrimary solo>Sign Up</Styles.Button>
     </Styles.Form>
   )
