@@ -5,7 +5,7 @@ const Landing = () => {
     <div className='content'>
       <Styles.Div>
         <h1 style={{fontSize: '5vw'}}>Less Worry</h1>
-        <h3 style={{ marginTop: '10px' }}>Stay safe. Save time. MedManager+ uses apis <br /> from NIH  to check for adverse drug reactions <br /> so you don't have to worry/</h3>
+        <h3 style={{ marginTop: '10px' }}>Stay safe. Save time. MedManager+ uses data <br /> from NIH  to check for adverse drug reactions <br /> so you can worry less.</h3>
       </Styles.Div>     
         <button style={{ marginTop: '25px' }}>Learn More</button>
     </div>

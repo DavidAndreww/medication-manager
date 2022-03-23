@@ -13,6 +13,7 @@ const Styles = {
     z-index: 1;
     color: #FFFFFC;
     font-size: 5vh;
+    border-top: 2px solid white;
   `
 }
 
